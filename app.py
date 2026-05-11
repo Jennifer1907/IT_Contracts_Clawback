@@ -38,36 +38,37 @@ st.markdown("""
 
   /* Main background */
   .stApp {
-    background-color: #0d1117;
-    color: #e6edf3;
+    background-color: #f5f7fa;
+    color: #1a1f2e;
   }
 
   /* Sidebar */
   [data-testid="stSidebar"] {
-    background-color: #161b22;
-    border-right: 1px solid #30363d;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
   }
   [data-testid="stSidebar"] .stMarkdown h2,
   [data-testid="stSidebar"] .stMarkdown h3 {
-    color: #f0b429;
+    color: #c47f00;
   }
 
   /* Metric cards */
   [data-testid="metric-container"] {
-    background-color: #161b22;
-    border: 1px solid #30363d;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
   [data-testid="metric-container"] label {
-    color: #8b949e !important;
+    color: #64748b !important;
     font-size: 0.75rem !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-family: 'IBM Plex Mono', monospace !important;
   }
   [data-testid="metric-container"] [data-testid="stMetricValue"] {
-    color: #f0b429 !important;
+    color: #c47f00 !important;
     font-family: 'IBM Plex Mono', monospace !important;
     font-size: 1.6rem !important;
     font-weight: 600;
@@ -76,26 +77,26 @@ st.markdown("""
   /* Section headers */
   h1, h2, h3 {
     font-family: 'IBM Plex Sans', sans-serif;
-    color: #e6edf3;
+    color: #1a1f2e;
   }
   h1 { border-bottom: 2px solid #f0b429; padding-bottom: 8px; }
 
   /* Alert / highlight box */
   .clawback-alert {
-    background: linear-gradient(135deg, #1a1000 0%, #2a1800 100%);
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
     border-left: 4px solid #f0b429;
     border-radius: 4px;
     padding: 12px 16px;
     margin: 8px 0;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.85rem;
-    color: #ffd166;
+    color: #92400e;
   }
 
   /* Download button */
   .stDownloadButton > button {
     background-color: #f0b429;
-    color: #0d1117;
+    color: #1a1f2e;
     border: none;
     border-radius: 6px;
     font-weight: 700;
@@ -104,21 +105,21 @@ st.markdown("""
     padding: 8px 20px;
   }
   .stDownloadButton > button:hover {
-    background-color: #ffd166;
-    color: #0d1117;
+    background-color: #c47f00;
+    color: #ffffff;
   }
 
   /* Multiselect tags */
   .stMultiSelect span[data-baseweb="tag"] {
     background-color: #f0b429 !important;
-    color: #0d1117 !important;
+    color: #1a1f2e !important;
   }
 
   /* Divider */
-  hr { border-color: #30363d; }
+  hr { border-color: #e2e8f0; }
 
   /* Dataframe */
-  .stDataFrame { border: 1px solid #30363d; border-radius: 6px; }
+  .stDataFrame { border: 1px solid #e2e8f0; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
 </style>
 """, unsafe_allow_html=True)
 
@@ -313,12 +314,12 @@ with chart_col1:
     )
     fig1.update_layout(
         barmode="stack",
-        paper_bgcolor="#161b22",
-        plot_bgcolor="#161b22",
-        font=dict(color="#e6edf3", family="IBM Plex Sans"),
-        legend=dict(bgcolor="#161b22", bordercolor="#30363d"),
-        xaxis=dict(gridcolor="#21262d"),
-        yaxis=dict(gridcolor="#21262d", tickprefix="$", tickformat=",.0f"),
+        paper_bgcolor="#ffffff",
+        plot_bgcolor="#f5f7fa",
+        font=dict(color="#1a1f2e", family="IBM Plex Sans"),
+        legend=dict(bgcolor="#ffffff", bordercolor="#e2e8f0"),
+        xaxis=dict(gridcolor="#e2e8f0"),
+        yaxis=dict(gridcolor="#e2e8f0", tickprefix="$", tickformat=",.0f"),
         margin=dict(l=10, r=10, t=10, b=10),
         height=340,
     )
@@ -338,12 +339,12 @@ with chart_col2:
         color_discrete_sequence=px.colors.qualitative.Bold,
     )
     fig2.update_layout(
-        paper_bgcolor="#161b22",
-        plot_bgcolor="#161b22",
-        font=dict(color="#e6edf3", family="IBM Plex Sans"),
-        legend=dict(bgcolor="#161b22", bordercolor="#30363d"),
-        xaxis=dict(gridcolor="#21262d", tickprefix="$", tickformat=",.0f", title="Unused Funds"),
-        yaxis=dict(gridcolor="#21262d", tickprefix="$", tickformat=",.0f", title="Outage Cost"),
+        paper_bgcolor="#ffffff",
+        plot_bgcolor="#f5f7fa",
+        font=dict(color="#1a1f2e", family="IBM Plex Sans"),
+        legend=dict(bgcolor="#ffffff", bordercolor="#e2e8f0"),
+        xaxis=dict(gridcolor="#e2e8f0", tickprefix="$", tickformat=",.0f", title="Unused Funds"),
+        yaxis=dict(gridcolor="#e2e8f0", tickprefix="$", tickformat=",.0f", title="Outage Cost"),
         margin=dict(l=10, r=10, t=10, b=10),
         height=340,
     )
@@ -373,11 +374,11 @@ fig3 = px.area(
 )
 fig3.update_traces(fill="tozeroy", fillcolor="rgba(240,180,41,0.15)", line_width=2)
 fig3.update_layout(
-    paper_bgcolor="#161b22",
-    plot_bgcolor="#161b22",
-    font=dict(color="#e6edf3", family="IBM Plex Sans"),
-    xaxis=dict(gridcolor="#21262d", title="Contract End Month"),
-    yaxis=dict(gridcolor="#21262d", tickprefix="$", tickformat=",.0f", title="Total Potential Clawback"),
+    paper_bgcolor="#ffffff",
+    plot_bgcolor="#f5f7fa",
+    font=dict(color="#1a1f2e", family="IBM Plex Sans"),
+    xaxis=dict(gridcolor="#e2e8f0", title="Contract End Month"),
+    yaxis=dict(gridcolor="#e2e8f0", tickprefix="$", tickformat=",.0f", title="Total Potential Clawback"),
     margin=dict(l=10, r=10, t=10, b=10),
     height=260,
 )
@@ -405,7 +406,7 @@ def style_clawback_table(styler):
     """Apply row-level highlight when PotentialClawback exceeds threshold."""
     def highlight_row(row):
         if row["PotentialClawback"] >= clawback_threshold:
-            return ["background-color: #2a1800; color: #ffd166; font-weight: 600;"] * len(row)
+            return ["background-color: #fef3c7; color: #92400e; font-weight: 600;"] * len(row)
         return [""] * len(row)
 
     styler.apply(highlight_row, axis=1)
