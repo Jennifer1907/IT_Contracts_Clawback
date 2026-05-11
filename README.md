@@ -13,13 +13,6 @@ IT organizations often leave money on the table at contract renewal or expiry. T
 - **Potential clawback** — the combined recovery opportunity per contract
 
 The app ships with a fully simulated dataset (40 contracts, 10 vendors) so it runs out of the box with no external data required.
-
----
-
-## Screenshots
-
-> _Add screenshots here after running the app locally._
-
 ---
 
 ## Features
